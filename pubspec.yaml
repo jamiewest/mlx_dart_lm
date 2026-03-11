@@ -1,0 +1,12 @@
+name: mlx_dart_lm_workspace
+publish_to: none
+
+environment:
+  sdk: ^3.5.0
+
+workspace:
+  - packages/mlx_lm_common
+  - packages/mlx_llm
+  - packages/mlx_vlm
+
+

@@ -1,0 +1,21 @@
+name: mlx_vlm
+description: >-
+  Vision language model implementations for MLX in Dart — a port of MLXVLM
+  from mlx-swift-lm. Provides vision encoders, image processors, and VLM
+  implementations including Qwen2-VL and LFM2.4 Vision.
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.5.0
+
+resolution: workspace
+
+dependencies:
+  mlx_dart: ^ 0.1.1
+  mlx_lm_common:
+    path: ../mlx_lm_common
+
+dev_dependencies:
+  lints: ^5.0.0
+  test: ^1.25.0
