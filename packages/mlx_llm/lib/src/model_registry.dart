@@ -17,6 +17,11 @@ import 'models/olmo2.dart';
 import 'models/openelm.dart';
 import 'models/phimoe.dart';
 import 'models/qwen3_moe.dart';
+import 'models/ernie4_5.dart';
+import 'models/glm4.dart';
+import 'models/granite.dart';
+import 'models/olmo3.dart';
+import 'models/smollm3.dart';
 import 'models/starcoder2.dart';
 
 // ---------------------------------------------------------------------------
@@ -36,7 +41,7 @@ LanguageModel modelFromConfig(
 ) {
   final type = (config['model_type'] as String? ?? '').toLowerCase();
   return switch (type) {
-    'llama' || 'mistral' || 'qwen2' || 'granite' => LlamaModel(
+    'llama' || 'mistral' || 'qwen2' => LlamaModel(
         ctx,
         LlamaConfig.fromJson(config),
       ),
@@ -57,6 +62,11 @@ LanguageModel modelFromConfig(
     'olmo2' => Olmo2Model(ctx, Olmo2Config.fromJson(config)),
     'openelm' => OpenELMModel(ctx, OpenELMConfig.fromJson(config)),
     'phimoe' => PhiMoEModel(ctx, PhiMoEConfig.fromJson(config)),
+    'glm4' => GLM4Model(ctx, GLM4Config.fromJson(config)),
+    'granite' => GraniteModel(ctx, GraniteConfig.fromJson(config)),
+    'ernie4_5' => Ernie45Model(ctx, Ernie45Config.fromJson(config)),
+    'olmo3' => Olmo3Model(ctx, Olmo3Config.fromJson(config)),
+    'smollm3' => SmolLM3Model(ctx, SmolLM3Config.fromJson(config)),
     _ => throw UnknownModelTypeException(type),
   };
 }
