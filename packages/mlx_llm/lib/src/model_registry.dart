@@ -19,10 +19,19 @@ import 'models/phimoe.dart';
 import 'models/qwen3_moe.dart';
 import 'models/ernie4_5.dart';
 import 'models/glm4.dart';
+import 'models/qwen3next.dart';
+import 'models/glm4_moe.dart';
 import 'models/granite.dart';
+import 'models/mistral3_text.dart';
 import 'models/olmo3.dart';
 import 'models/smollm3.dart';
 import 'models/starcoder2.dart';
+import 'models/exaone4.dart';
+import 'models/lille130m.dart';
+import 'models/mimo.dart';
+import 'models/nanochat.dart';
+import 'models/lfm2.dart';
+import 'models/bailing_moe.dart';
 
 // ---------------------------------------------------------------------------
 // Model registry
@@ -63,10 +72,19 @@ LanguageModel modelFromConfig(
     'openelm' => OpenELMModel(ctx, OpenELMConfig.fromJson(config)),
     'phimoe' => PhiMoEModel(ctx, PhiMoEConfig.fromJson(config)),
     'glm4' => GLM4Model(ctx, GLM4Config.fromJson(config)),
+    'glm4_moe' => GLM4MoEModel(ctx, GLM4MoEConfig.fromJson(config)),
     'granite' => GraniteModel(ctx, GraniteConfig.fromJson(config)),
+    'mistral3' => Mistral3TextModel(ctx, Mistral3TextConfig.fromJson(config)),
     'ernie4_5' => Ernie45Model(ctx, Ernie45Config.fromJson(config)),
     'olmo3' => Olmo3Model(ctx, Olmo3Config.fromJson(config)),
     'smollm3' => SmolLM3Model(ctx, SmolLM3Config.fromJson(config)),
+    'qwen3_next' => Qwen3NextModel(ctx, Qwen3NextConfig.fromJson(config)),
+    'exaone4' => Exaone4Model(ctx, Exaone4Config.fromJson(config)),
+    'lille130m' => Lille130mModel(ctx, Lille130mConfig.fromJson(config)),
+    'mimo' => MiMoModel(ctx, MiMoConfig.fromJson(config)),
+    'nanochat' => NanoChatModel(ctx, NanoChatConfig.fromJson(config)),
+    'lfm2' => LFM2Model(ctx, LFM2Config.fromJson(config)),
+    'bailing_moe' => BailingMoeModel(ctx, BailingMoeConfig.fromJson(config)),
     _ => throw UnknownModelTypeException(type),
   };
 }

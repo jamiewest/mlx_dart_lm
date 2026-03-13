@@ -12,7 +12,7 @@ environment:
 resolution: workspace
 
 dependencies:
-  mlx_dart: ^ 0.1.1
+  mlx_dart: ^0.1.2
   mlx_lm_common:
     path: ../mlx_lm_common
 
